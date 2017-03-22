@@ -25,11 +25,19 @@ public class DeDup {
 		printList(result);
 	}
 	
+	public DeDup() {
+		
+	}
+	
+	public DeDup(int[] array) {
+		randomIntegers = array;
+	}
+	
 	/**
 	 * Removing duplicated from array using list to maintain the order from the original array
 	 * @return array without dupe values
 	 */
-	private int[] removeDupeAndRetainOriginalOrder() {
+	public int[] removeDupeAndRetainOriginalOrder() {
 		List<Integer> listWithOutDupe = new ArrayList<Integer>();
 
 		for(int i=0; i<randomIntegers.length; i++) {
@@ -52,7 +60,7 @@ public class DeDup {
 	 * Removing duplicated from array using set
 	 * @return array without dupe values
 	 */
-	private int[] removeDupeUsingSet() {
+	public int[] removeDupeUsingSet() {
 		Set<Integer> numSet = new HashSet<Integer>();		
 		for (int num : randomIntegers) {
 			if (!numSet.contains(num)) {
@@ -72,7 +80,7 @@ public class DeDup {
 	 * Removing duplicated from array within the array by switching values 
 	 * @return array without dupe values
 	 */
-	private int[] removeDupeWithInArray() {
+	public int[] removeDupeWithInArray() {
 		int[] arrayWithDupe = randomIntegers;
 		int length = arrayWithDupe.length;         
         for (int i = 0; i < length; i++) {
